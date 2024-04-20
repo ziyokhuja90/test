@@ -195,6 +195,8 @@ class Database:
 
     def delete_table_lesson(self):
         self.execute("DROP TABLE Lessons" , commit=True)
+    def delete_Subcategory_lesson(self):
+        self.execute("DROP TABLE SubCategory" , commit=True)
 
 def logger(statement):
     print(f"""

@@ -5,10 +5,21 @@ async def LessonKeyboards(category  , subcategory):
     lessons = db.select_lesson(category=category  , subcategory=subcategory)
     
     LessonKeyboard = ReplyKeyboardMarkup(resize_keyboard=True)
+    row = []
+    for lesson in lessons:
+        row.append(f"{lesson[1]}-dars")
+        if len(row) == 2:  # Adjust 2 to the desired row width
+            LessonKeyboard.row(*row)
+            row = []
+    if row:  # Add the last row if it's not empty
+        LessonKeyboard.row(*row)
 
+
+        
+    return LessonKeyboard
     # lesson_buttons = []
 
-    
+
 
     # Subcategory_buttons = []
     # SubcategorySet = set(Subcategory[1] for Subcategory in Subcategorys)
