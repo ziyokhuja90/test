@@ -11,7 +11,7 @@ from uuid import uuid4
 
 from keyboards.default.categorykeyboards import categoryKeyboard
 from keyboards.default.subcategorysKeyboard import SubCategoryKeyboard
-
+from keyboards.default.simpleKeyboards import StartLesson
 
 
 
@@ -116,5 +116,5 @@ async def SaveToDB(message : Message , state : FSMContext):
         
         )
 
-    await message.answer("Yangi dars saqlandi")
+    await message.answer("Yangi dars saqlandi" , reply_markup=StartLesson)
     await state.finish()

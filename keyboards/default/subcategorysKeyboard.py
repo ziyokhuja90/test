@@ -4,9 +4,9 @@ from loader import db
 
 async def SubCategoryKeyboard(category):
     
-    print(db.select_all_SubCategorys())
+    # print(db.select_all_SubCategorys())
     Subcategorys = db.select_Subcategory(category=category)
-    print(Subcategorys)
+    # print(Subcategorys)
     SubcategoryKeyboard = ReplyKeyboardMarkup(resize_keyboard=True)
 
     Subcategory_buttons = []

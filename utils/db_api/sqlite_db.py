@@ -176,7 +176,7 @@ class Database:
         sql = "SELECT * FROM Lessons WHERE "
         sql, parameters = self.format_args(sql, kwargs)
 
-        return self.execute(sql, parameters=parameters, fetchone=True)
+        return self.execute(sql, parameters=parameters, fetchall=True)
     
 
     def count_users(self):
