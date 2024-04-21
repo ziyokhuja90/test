@@ -3,7 +3,10 @@ from loader import db
 
 async def LessonKeyboards(category  , subcategory):
     lessons = db.select_lesson(category=category  , subcategory=subcategory)
-    
+    print(lessons)
+    test = db.select_lesson(countOfLesson="BAACAgIAAxkBAAIDlWYjcb-eRbeY23eVmGqnFp2nk_E_AALzSwAC8ZkZSf5aMixYvRzTNAQ" ,)
+    print(test)
+
     LessonKeyboard = ReplyKeyboardMarkup(resize_keyboard=True)
     row = []
     for lesson in lessons:
@@ -15,7 +18,7 @@ async def LessonKeyboards(category  , subcategory):
         LessonKeyboard.row(*row)
 
 
-        
+
     return LessonKeyboard
     # lesson_buttons = []
 

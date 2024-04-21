@@ -15,6 +15,7 @@ from keyboards.default.simpleKeyboards import StartLesson
 
 
 
+
 @dp.message_handler(commands=["addLesson"])
 async def AddLesson(message : Message , state : FSMContext):
 
@@ -32,6 +33,7 @@ async def AddLessonVideoId(message:Message ,state : FSMContext):
         await Add_Lesson_State.next()
     else:
         await message.answer("parol noto'g'ri")
+
 
 @dp.message_handler(content_types=types.ContentTypes.VIDEO , state=Add_Lesson_State.videoId)
 async def AddLessonNumberOfLesson(message:Message ,state : FSMContext):

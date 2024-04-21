@@ -52,6 +52,7 @@ class Database:
             subcategory varchar(255),
             PRIMARY KEY (id)
             );"""
+        
         self.execute(sql , commit=True)
     
     # Category jadvali
@@ -175,9 +176,11 @@ class Database:
         # SQL_EXAMPLE = "SELECT * FROM Users where id=1 AND Name='John'"
         sql = "SELECT * FROM Lessons WHERE "
         sql, parameters = self.format_args(sql, kwargs)
-
         return self.execute(sql, parameters=parameters, fetchall=True)
     
+    
+    def select_all_lesson(self):
+        return self.execute("SELECT DISTINCT CountOfLesson FROM Lessons",fetchall=True)
 
     def count_users(self):
         return self.execute("SELECT COUNT(*) FROM Users;", fetchone=True)
@@ -195,6 +198,7 @@ class Database:
 
     def delete_table_lesson(self):
         self.execute("DROP TABLE Lessons" , commit=True)
+
     def delete_Subcategory_lesson(self):
         self.execute("DROP TABLE SubCategory" , commit=True)
 
