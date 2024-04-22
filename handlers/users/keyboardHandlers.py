@@ -36,7 +36,7 @@ async def SubCategory(message : types.Message , state : FSMContext):
 
 
 @dp.message_handler(state=States.fronEnd)
-async def lessonKeyboards(message : types.Message):
+async def lessonKeyboards(message : types.Message , state : FSMContext):
     lessons = db.select_lesson(category="front-end"  , subcategory=message.text)
     
     if lessons != []:
@@ -44,15 +44,13 @@ async def lessonKeyboards(message : types.Message):
         subcategory = message.text
         keyboard = await LessonKeyboards(category="front-end" , subcategory=message.text)
         await message.answer("Dars sonini tanlang" , reply_markup=keyboard)
-
     else:
-        text = f"it wooooooooooooooooooooooooooooooooooooooooooooooooooooooooooorks"
+        text = f""
         lesson = db.select_lesson(VideoId=message.text[0] , category="front-end" , Subcategory=subcategory)
+        text += f"{subcategory} Darslari | {message.text} | {lesson[0][3]}" 
         print(lesson)
-        # print("-----------------------------")
-        # print(len(lesson))
-        # print(lesson[0][2])
         await bot.send_video(message.from_user.id , video=lesson[0][2] , caption=text  )
+        # await state.finish()
 
 
     # keyboards = await SubCategoryKeyboard(category="front-end")
