@@ -1,11 +1,9 @@
 from aiogram.types.reply_keyboard import ReplyKeyboardMarkup , KeyboardButton
 from loader import db 
-
+from keyboards.default import simpleKeyboards
 async def LessonKeyboards(category  , subcategory):
     lessons = db.select_lesson(category=category  , subcategory=subcategory)
-    print(lessons)
-    test = db.select_lesson(countOfLesson="BAACAgIAAxkBAAIDlWYjcb-eRbeY23eVmGqnFp2nk_E_AALzSwAC8ZkZSf5aMixYvRzTNAQ" ,)
-    print(test)
+
 
     LessonKeyboard = ReplyKeyboardMarkup(resize_keyboard=True)
     row = []
@@ -17,9 +15,12 @@ async def LessonKeyboards(category  , subcategory):
     if row:  # Add the last row if it's not empty
         LessonKeyboard.row(*row)
 
+    new_keyboard = LessonKeyboard
+    new_keyboard.add(simpleKeyboards.back_button , simpleKeyboards.main_menu_button)
+    
+    return new_keyboard
 
 
-    return LessonKeyboard
     # lesson_buttons = []
 
 

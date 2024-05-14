@@ -1,6 +1,8 @@
 from aiogram.types.reply_keyboard import ReplyKeyboardMarkup , KeyboardButton
 
 from loader import db
+from keyboards.default import simpleKeyboards
+
 
 async def SubCategoryKeyboard(category):
     
@@ -27,6 +29,8 @@ async def SubCategoryKeyboard(category):
     # Add buttons to the keyboard
     for row in Subcategory_buttons:
         SubcategoryKeyboard.row(*row)
-    
-    return SubcategoryKeyboard
 
+    new_keyboard = SubcategoryKeyboard
+    new_keyboard.add(simpleKeyboards.back_button , simpleKeyboards.main_menu_button)
+    
+    return new_keyboard

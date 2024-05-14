@@ -94,7 +94,7 @@ async def subcategory(message : Message , state : FSMContext):
     async with state.proxy() as data:
         data['category'] = message.text
     
-    keyboards  = await SubCategoryKeyboard(category=data["category"].lower())
+    keyboards  = await SubCategoryKeyboard(category=data["category"])
     await message.answer("subcategoryyani kiriting" , reply_markup=keyboards)
     await Add_Lesson_State.next()
 

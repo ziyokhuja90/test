@@ -13,10 +13,16 @@ async def on_startup(dispatcher):
     try:
         # db.delete_table_lesson()
         # db.create_table_lesson()
-        db.create_table_subcategory()
+        # db.delete_Subcategory_lesson()
+        print("Bot ishga tushdi")
+        # db.create_table_category()
+        # db.delete_Category_lesson()
+        # db.create_table_subcategory()
         # db.create_table_users()
     except Exception as err:
         print(err)
+        # print("sssssss")
+        
 
 
     

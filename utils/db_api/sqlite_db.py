@@ -195,12 +195,18 @@ class Database:
 
     def delete_users(self):
         self.execute("DELETE FROM Users WHERE TRUE", commit=True)
+    def delete_one_category(self , name):
 
+        self.execute(f"DELETE FROM Category WHERE name='{name}'", commit=True)
+    
     def delete_table_lesson(self):
         self.execute("DROP TABLE Lessons" , commit=True)
 
     def delete_Subcategory_lesson(self):
         self.execute("DROP TABLE SubCategory" , commit=True)
+
+    def delete_Category_lesson(self):
+        self.execute("DROP TABLE Category" , commit=True)
 
 def logger(statement):
     print(f"""
