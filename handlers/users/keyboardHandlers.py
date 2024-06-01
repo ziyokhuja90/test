@@ -14,6 +14,18 @@ from keyboards.default.LessonKeyboards import LessonKeyboards
 from keyboards.default.simpleKeyboards import StartLesson ,  dasturlashKeyboard , HomeKeyboards
 
 
+@dp.message_handler(Text(contains="bog'lanish") , state="*")
+async def MainMenuHandler(message: types.Message , state: FSMContext):
+    # await state.finish()
+    await message.answer("Biz bilan bog'lanish uchun ushbu qo'ng'iroqlarga murojat qilishingiz mumkin \n+998945515701 \n+998910585717")
+
+@dp.message_handler(Text(contains="Bot haqida") , state="*")
+async def MainMenuHandler(message: types.Message , state: FSMContext):
+    # await state.finish()
+    await message.answer("Bu bot orqali siz IT sohasi bo'yicha tekin darsliklarni ko'rib mustaqil o'rganishingiz mumkin")
+
+
+
 @dp.message_handler(Text(contains="Menyu") , state="*")
 async def MainMenuHandler(message: types.Message , state: FSMContext):
     await state.finish()
@@ -209,7 +221,7 @@ async def lessonKeyboards(message : types.Message , state : FSMContext):
 
 
 
-# orqaga va bosh menu button handler
+#   orqaga va bosh menu button handler
 
 
 
