@@ -337,10 +337,10 @@ def delete_Illustrator(request, id):
     return redirect("Illustrator")
 
 
-# Adobe Coraldraw ---------------------------------------------------------------------------------------------------
+# Adobe Coreldraw ---------------------------------------------------------------------------------------------------
 
 def Coraldraw_view(request):
-    Products = Product.objects.filter(category_name="Grafik Dizayn" , subcategory_name="Coraldraw")
+    Products = Product.objects.filter(category_name="Grafik Dizayn" , subcategory_name="Coreldraw")
     context = {
         "Products":Products
     }
@@ -354,7 +354,7 @@ def createCoraldraw_view(request):
         if form.is_valid():
             # Inspect form data
             form.instance.category_name = "Grafik Dizayn"
-            form.instance.subcategory_name = "Coraldraw"
+            form.instance.subcategory_name = "Coreldraw"
             form.save()
             return redirect('Coraldraw')
         else:

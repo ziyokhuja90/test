@@ -1,3 +1,4 @@
+from . import keraklidasturlarHandler
 from . import addlessonHandlers
 from . import start
 from . import keyboardHandlers

@@ -29,7 +29,7 @@ HomeKeyboards = ReplyKeyboardMarkup(
 grafikdizayn = ReplyKeyboardMarkup(
     keyboard=[
         [KeyboardButton("Photoshop"),KeyboardButton("Illustrator")],
-        [KeyboardButton("CoralDraw")],
+        [KeyboardButton("Coreldraw")],
         [KeyboardButton("🔙 Orqaga")]
     ],
     resize_keyboard=True
@@ -47,6 +47,49 @@ dasturlashKeyboard = ReplyKeyboardMarkup(
     ],
     resize_keyboard=True
 )
+FrontendKeyboard = ReplyKeyboardMarkup(
+    keyboard=[
+        [
+            KeyboardButton("Html"),
+            KeyboardButton("Css")
+        ],
+        [
+            KeyboardButton("JavaScript"),
+            KeyboardButton("React Js")
+        ],
+        [
+
+        KeyboardButton("🔙 Orqaga"),
+        KeyboardButton("🔝 Asosiy Menyu")        
+        ]
+    ],
+    resize_keyboard=True
+)
+
+BackendKeyboard = ReplyKeyboardMarkup(
+    keyboard=[
+        [
+            KeyboardButton("Python"),
+            KeyboardButton("Python Django")
+        ],
+        [
+        KeyboardButton("🔙 Orqaga"),
+        KeyboardButton("🔝 Asosiy Menyu")        
+        ]
+    ],
+    resize_keyboard=True
+)
+
+
+
+
+
+
+back_button = KeyboardButton("🔙 Orqaga")
+main_menu_button = KeyboardButton("🔝 Asosiy Menyu")
+
+
+
 
 # OrqagaBoshmenu = ReplyKeyboardMarkup(
 #     keyboard=[
@@ -57,6 +100,3 @@ dasturlashKeyboard = ReplyKeyboardMarkup(
 #         ]
 #     ]
 # )
-
-back_button = KeyboardButton("🔙 Orqaga")
-main_menu_button = KeyboardButton("🔝 Asosiy Menyu")

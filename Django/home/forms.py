@@ -28,7 +28,7 @@ class ProductForm(ModelForm):
             ]
         widgets = {
             'lesson_name': forms.TextInput(attrs={'class': 'form-control w-100', "id":"floatingInput"}),
-            'lesson_number': forms.NumberInput(attrs={'class': 'form-control w-100',}),
+            'lesson_number': forms.TextInput(attrs={'class': 'form-control w-100',}),
             'description': forms.Textarea(attrs={'class': 'form-control w-100', "id":"exampleFormControlTextarea1" , "rows":"3"}),
             'videoId': forms.TextInput(attrs={'class': 'form-control w-100' }),
             'telegram': forms.TextInput(attrs={'class': 'form-control w-100'}),
@@ -44,6 +44,10 @@ class ProductForm(ModelForm):
         
 
 class GrafikDizaynProductForm(ModelForm):
+
+    # lesson_number = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control w-100'}))
+
+
     class Meta:
         model = Product
         fields = [
@@ -58,7 +62,7 @@ class GrafikDizaynProductForm(ModelForm):
             ]
         widgets = {
             'lesson_name': forms.TextInput(attrs={'class': 'form-control w-100', "id":"floatingInput"}),
-            'lesson_number': forms.NumberInput(attrs={'class': 'form-control w-100',}),
+            'lesson_number': forms.TextInput(attrs={'class': 'form-control w-100',}),
             'description': forms.Textarea(attrs={'class': 'form-control w-100', "id":"exampleFormControlTextarea1" , "rows":"3"}),
             'videoId': forms.TextInput(attrs={'class': 'form-control w-100' }),
             'telegram': forms.TextInput(attrs={'class': 'form-control w-100'}),

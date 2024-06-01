@@ -11,3 +11,7 @@ class BackButtonStates(StatesGroup):
     level2 = State()
     level3 = State()
 
+class Keraklidasturlar(StatesGroup):
+    KeraklidasturLevel1 = State()
+    KeraklidasturLevel2 = State()
+    KeraklidasturLevel3 = State()

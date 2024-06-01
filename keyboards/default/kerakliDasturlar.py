@@ -1,5 +1,21 @@
 from aiogram.types.reply_keyboard import ReplyKeyboardMarkup , KeyboardButton
 
+
+DasturlarKeyboard = ReplyKeyboardMarkup(
+    keyboard=[
+        [
+            KeyboardButton("Dasturlash dasturlar"),
+            KeyboardButton("Grafik dizayn dasturlar"),
+        ],
+        [
+            KeyboardButton("🔙 Orqaga"),
+            KeyboardButton("🔝 Asosiy Menyu")
+        ]
+    ],
+    resize_keyboard=True
+)
+
+
 KeraklidasturlarGrafikdizaynKeyboard = ReplyKeyboardMarkup(
     keyboard=[
         [
@@ -7,13 +23,13 @@ KeraklidasturlarGrafikdizaynKeyboard = ReplyKeyboardMarkup(
             KeyboardButton("Adobe Illustrator"),
         ],
         [
-            KeyboardButton("Figma")
+            KeyboardButton("Coreldraw")
         ],
         [
             KeyboardButton("🔙 Orqaga"),
             KeyboardButton("🔝 Asosiy Menyu")
         ]
-    ],
+    ],  
     resize_keyboard=True
 )
 KeraklidasturlarPhotoshopKeyboard = ReplyKeyboardMarkup(
@@ -59,6 +75,21 @@ KeraklidasturlarIllustratorKeyboard = ReplyKeyboardMarkup(
         [
             KeyboardButton("Adobe Illustrator CC 2021"),
             KeyboardButton("Adobe Illustrator CC 2022"),
+        ],
+        [
+            KeyboardButton("🔙 Orqaga"),
+            KeyboardButton("🔝 Asosiy Menyu")
+        ]
+    ],
+    resize_keyboard=True
+)
+
+
+KeraklidasturlarDasrulash = ReplyKeyboardMarkup(
+    keyboard=[
+        [
+            KeyboardButton("Visual studio code"),
+            KeyboardButton("Sublime text"),
         ],
         [
             KeyboardButton("🔙 Orqaga"),
